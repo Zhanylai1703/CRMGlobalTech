@@ -1,0 +1,45 @@
+{% block content %}
+  <div class="order">
+    <h1>{{ object.product }}</h1>
+    <h2>Заказ от {{ object.date }}</h2>
+    <p>Клиент: <a href="{{ object.customer.get_absolute_url }}">{{ object.customer }}</a></p>
+    <p>Сотрудник: {{ object.employee }}</p>
+    <p>Общая сумма: {{ order.product.price }}$</p>
+  </div>
+{% endblock %}
+
+{% block styles %}
+  <style>
+    .order {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+      background-color: #f8f8f8;
+    }
+
+    .order h1 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .order h2 {
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    .order p {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .order a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .order a:hover {
+      text-decoration: underline;
+    }
+  </style>
+{% endblock %}

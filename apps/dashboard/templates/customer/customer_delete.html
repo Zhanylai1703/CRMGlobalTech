@@ -1,0 +1,53 @@
+{% block content %}
+  <div class="customer-delete">
+    <h2 class="customer-delete__title">Delete customer "{{ customer.name }}"</h2>
+    <p class="customer-delete__message">Are you sure you want to delete this customer?</p>
+    <form class="customer-delete__form" method="post">
+      {% csrf_token %}
+      <button class="customer-delete__button" type="submit">Delete</button>
+      <a class="customer-delete__cancel-link" href="{% url 'customer-list' %}">Cancel</a>
+    </form>
+  </div>
+  <style>
+  .customer-delete {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #80cd5c;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.customer-delete__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.customer-delete__message {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.customer-delete__form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.customer-delete__button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.customer-delete__cancel-link {
+  color: #f44336;
+  text-decoration: none;
+  font-size: 16px;
+}
+  </style>
+{% endblock %}

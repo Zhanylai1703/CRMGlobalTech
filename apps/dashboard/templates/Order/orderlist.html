@@ -1,0 +1,55 @@
+{% block content %}
+  <h1>Orders</h1>
+  <ul>
+    {% for order in order_list %}
+    <li><a href="{{ order.get_absolute_url }}">{{ order.product }}</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url  'order_create' %}"><button type="button">Добавить заказ</button></a>
+{% endblock %}
+</body>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0062cc;
+  }
+</style>
+</head>
+
+<body>
+
+

@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ customer.name }}</title>
+  <link rel="stylesheet" href="{% static 'css/customer.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>{{ customer.name }}</h1>
+    <h2>Заказы:</h2>
+    <ul>
+      {% for order in customer.order_set.all %}
+        <li>{{ order.product }} ({{ order.employee }})</li>
+      {% endfor %}
+    </ul>
+    <h2>Общая сумма заказов: {{ total }}$</h2>
+  </div>
+  <style>
+
+  .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #6ac86d;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+h2 + ul {
+  margin-top: 5px;
+}
+
+h2 + ul + h2 {
+  margin-top: 20px;
+}
+
+h2 + ul + h2 + h2 {
+  margin-top: 5px;
+}
+  </style>
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to GlobalTech!</h1>
+    <ul>
+        <li><a href="{% url 'customer-list' %}">Customers</a></li>
+        <li><a href="{% url 'employee_list' %}">Employees</a></li>
+        <li><a href="{% url 'order_list' %}">Orders</a></li>
+    </ul>
+    
+    <style>
+
+    ul li a:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+    /* Add style to the header */
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+
+         h1 {
+        text-align: center;
+        margin-top: 70px;
+        font-size: 36px;
+        color: #2368bc;
+        text-shadow: 2px 2px #eeeeee;
+        animation: fadeInUp 1s ease-out;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 50px auto;
+        width: 400px;
+        padding: 0;
+        text-align: center;
+        animation: fadeIn 1s ease-out;
+    }
+    
+    li {
+        display: inline-block;
+        margin: 20px;
+    }
+    
+    a {
+        display: block;
+        width: 150px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 5px;
+        background-color: #9561ee;
+        color: #171515;
+        text-decoration: none;
+        font-size: 30px;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    a:hover {
+        background-color: #666666;
+    }
+    
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+    
+</html>
+
+

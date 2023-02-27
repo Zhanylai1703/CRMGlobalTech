@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ object.name }}'s details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #96f785;
+      font-weight: bold;
+    }
+
+    tfoot td {
+      text-align: right;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>{{ object.name }}'s details</h1>
+  <h2>Orders:</h2>
+  {% if orders %}
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Date</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order.product }}</td>
+        <td>{{ order.date }}</td>
+        <td>${{ order.product.price }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2"><strong>Total:</strong></td>
+        <td>${{ total }}</td>
+      </tr>
+    </tfoot>
+  </table>
+  {% else %}
+  <p class="error">No orders found.</p>
+  {% endif %}
+</body>
+</html>
