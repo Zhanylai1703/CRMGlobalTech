@@ -83,12 +83,14 @@ class EmployeeCreateView(CreateView):
 
 
 class EmployeeUpdateView(UpdateView):
+    template_name = 'Emploee/employee_update.html'
     model = Employee
     fields = ['name', 'age', 'gender', 'location']
 
 class EmployeeDeleteView(DeleteView):
+    template_name = 'Employee/employee_delete.html'
     model = Employee
-    success_url = reverse_lazy('employee-list')
+    success_url = reverse_lazy('employee_list')
 
 
 
