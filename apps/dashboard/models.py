@@ -40,7 +40,6 @@ class Order(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     date = models.DateField()
-    # quantity = models.PositiveIntegerField(null=True)
     total = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
 
     def __str__(self):

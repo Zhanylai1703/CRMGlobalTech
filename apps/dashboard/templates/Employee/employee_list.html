@@ -1,6 +1,6 @@
 {% block content %}
   <div class="container">
-    <h1 class="text-center">Клиенты</h1>
+    <h1 class="text-center">Employee</h1>
     <ul class="employee-list">
       {% for employee in employee_list %}
         <li><a href="{{ employee.get_absolute_url }}">{{ employee.name }}</a></li>
